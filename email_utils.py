@@ -15,7 +15,7 @@ def send_verification_email(to_email, code):
     <html>
         <body>
             <h2>Welcome!</h2>
-            <p>Your verification code is:</p>
+            <p>Hi, you requested for  verification code. Your verification code is:</p>
             <h1>{code}</h1>
         </body>
     </html>
@@ -28,7 +28,7 @@ def send_password_reset_email(to_email, new_password):
     <html>
         <body>
             <h2>Password Reset</h2>
-            <p>Your new password is:</p>
+            <p>Your password is about to be reset. Your update code is here:</p>
             <h1>{new_password}</h1>
         </body>
     </html>
@@ -46,3 +46,4 @@ def send_email(to_email, subject, html_content):
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
         server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
         server.sendmail(EMAIL_ADDRESS, to_email, msg.as_string())
+
